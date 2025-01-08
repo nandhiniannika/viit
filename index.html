@@ -16,7 +16,11 @@
             background-color: #f8f9fa;
         }
 
-        
+        .container {
+            background-color: black;
+            max-width: 100%;
+            padding: 0;
+        }
 
         .nav-item {
             color: white;
@@ -178,8 +182,8 @@ color: white;
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 100vw;
-            height: 100vh;
+            width: 100%;
+            height: 100%;
             object-fit: cover; /* This will ensure the video covers the entire container */
             transform: translate(-50%, -50%);
         }
@@ -187,75 +191,86 @@ color: white;
         /* Responsive Adjustments */
         @media (max-width: 576px) {
             .video-background {
-                height: 50vh;
-                /* Reduce height for small screens */
+                height: 50vh; /* Reduce height for small screens */
             }
         }
 
         @media (min-width: 576px) {
             .video-background {
-                height: 60vh; 
-                /* Taller height for medium devices */
+                height: 70vh; /* Taller height for medium devices */
             }
         }
 
         @media (min-width: 768px) {
             .video-background {
-                height: 75vh;
-        /* Increase height for larger devices */
+                height: 80vh; /* Increase height for larger devices */
             }
         }
 
         @media (min-width: 992px) {
             .video-background {
-                height: 90vh; 
-               /* Full height for large devices */
+                height: 90vh; /* Full height for large devices */
             }
         }
 
         @media (min-width: 1200px) {
             .video-background {
-                height: 100%;
-               /* Full height for extra large devices */
+                height: 100vh; /* Full height for extra large devices */
             }
         }
 
         /* Specific for 412x915 viewport */
-        @media (max-width: 1080px) and (max-height: 2400px) {
+        @media (max-width: 300px) and (max-height: 896px) {
     .video-background video {
         width: 100%; /* Adjust width to maintain aspect ratio */
         height: 100%; /* Keep the height at 100% */
-        object-fit: cover; /* Ensure the video fills the height without stretching */
+        object-fit: contain; /* Ensure the video fills the height without stretching */
     }
 }
 
 .vediorunning {
     position: relative;
     overflow: hidden;
-    width: 100vw;
+    width: 100%;
 }
 
 .vediorunning video {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: auto;
     object-fit: cover;
     display: block;
 }
 
 @media (max-width: 576px) {
     .vediorunning {
-        height: 50vh; /* Adjust height for small screens */
+        height: 70vh; /* Adjust height for small screens */
     }
 
     .vediorunning video {
-        height: 100vh;
+        height: 100%;
         object-fit: inherit;; /* Ensure video fits the screen on smaller devices */
     }
+}
+@media (max-width: 576px) {
+  .video-background {
+    height: 44vh;
+  }
+}
+@media (max-width: 768px) {
+    .vedio-background {
+    height: 75vh; /* Maintain aspect ratio */
+  }
+}
+
+@media (max-width: 480px) {
+  .vedio-background {
+    height: 75vh; /* Maintain aspect ratio */
+  }
 }
 
 @media (min-width: 576px) {
     .vediorunning {
-        height: 70%; /* Medium screen height */
+        height: 70vh; /* Medium screen height */
     }
 
     .vediorunning video {
@@ -276,27 +291,19 @@ color: white;
     }
 }
 
-@media (min-width: 1800px) {
+@media (min-width: 1200px) {
     .vediorunning {
         height: 100vh; /* Full height for extra large devices */
     }
 }
 
-        @media (max-width: 1800px) and (max-height: 2400px) {
-    .viderunning{
-        width: 100%; /* Adjust width to maintain aspect ratio */
-        height: 100%; /* Keep the height at 100% */
-        object-fit: cover; /* Ensure the video fills the height without stretching */
-    }
-        }
 .container{
-    background-color: black
+    background-color: black;
 }
 .vediorunning {
     position: relative;
     overflow: hidden;
     width: 100%;
-    height:100%;
     margin-top: 56px; /* Adjust based on your navbar height */
 }
 
@@ -363,16 +370,15 @@ a {
     
     <!-- Main content section -->
     <main>
-        <div class="container"style="height:100vh;">
         <div class="vediorunning">
-            <div class="video-background"style="height: 90vh;">
-            <video width="100%"autoplay muted loop>
-                <source src="vedio.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <div class="video-background">
+                <video width="100%" autoplay muted loop playsinline>
+                    <source src="vedio.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
         </div>
-        </div> 
+        
         <div class="goals">
             <div class="row g-3">
                 <div class="col-12 col-sm-6 col-md-4">
